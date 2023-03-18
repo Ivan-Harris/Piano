@@ -8,12 +8,12 @@ const pianoPlay = (note) => {
     audio.src = `./audio/$(note).wav`;
     audio.play()
 
-    const clickkey = document.querySelector(`[data-key="${notes}]`)
+    const clickKey = document.querySelector(`[data-key="${notes}"]`)
 
     clickkey.classList.add('active')
     setTimeout(()=> {
 
-        clickkey.classListist.remove('active')
+        clickKey.classListist.remove('active')
     }, 150)
     
 }
@@ -25,11 +25,11 @@ notes.forEach(note => {
     
 })
 
-const presskey = (e) => {
+const pressKey = (e) => {
     pianoPlay(e.key)
     
 }
-document.addEventListener("keydown",presskey)
+document.addEventListener("keydown",pressKey)
 
 function slidevolume(e){
     audio.volume = e.target.value
